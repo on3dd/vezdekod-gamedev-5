@@ -38,6 +38,16 @@ const GameBottleButton = styled.button`
 	&:active {
 		animation: ${shake} 0.2s ease-in-out;
 	}
+
+	> * {
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+	}
 `;
 
 const Svg = styled.svg`
@@ -51,16 +61,18 @@ const Rect = styled.rect`
 type GameBottleProps = {
 	bind: any;
 	progress: number;
+	disabled: boolean;
 	onClick: () => void;
 };
 
 export const GameBottle: React.FC<GameBottleProps> = ({
 	bind,
 	progress,
+	disabled,
 	onClick,
 }) => {
 	return (
-		<GameBottleButton {...bind} onClick={onClick}>
+		<GameBottleButton disabled={disabled} {...bind} onClick={onClick}>
 			<Svg
 				className="milk-bottle"
 				data-name="Layer 1"
