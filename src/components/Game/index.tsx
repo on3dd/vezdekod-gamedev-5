@@ -54,7 +54,7 @@ const GamePauseButton = styled.button`
 
 const INITIAL_LEVEL = 1;
 const INITIAL_PROGRESS = 40;
-const INITIAL_TIME_LEFT = 5;
+const INITIAL_TIME_LEFT = 15;
 
 const MIN_PROGRESS = 4;
 const MAX_PROGRESS = 80;
